@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container{
+            width: 500px;
+            height: 200px;
+            background-color: skyblue;
+            display: flex;
+        }
+        .container div {
+            width: 400px;
+            height: 100px;
+            background: pink;
+            
+            flex-shrink: 1;
+        }
+                /* 子项超出容器100px， */
+        /* flex-shrink 项目的收缩比例，默认值是1， 1 表示的就是超出的那块空间 */
+        /* 当我们容器空间不足的时候，默认值1，元素直接收缩到和容器一样宽度 */
+
+        /* flex-shrink:0.5, 收缩100的0.5， 50px, 还是会超出容器 */
+        /* flex-shrink：0， 超出的100px, 就不会收缩 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+    </div>
+</body>
+</html>

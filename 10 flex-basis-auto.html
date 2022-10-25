@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container{
+      
+            width: 500px;
+            height: 200px;
+            background-color: skyblue;
+            display: flex;
+            /* align-items: flex-start; */
+    
+        }
+        .item{
+            background-color: pink;
+            /* height: 20px; */
+            width: 20px;
+            flex:0.5 1  auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"></div>
+    </div>
+    <script>
+                // flex-basis: flex项目在主轴上的初始大小, 默认值auto
+        // auto，如果子项本身有宽度，auto表示本身的大小
+        // 如果没有设置宽度，但是有内容，auto就是内容撑开的宽度
+
+        // flex-basis优先级比我们主轴的width高 ，如果设置了flex-direction：column； flex-basis影响的是高度。
+    </script>
+</body>
+</html>

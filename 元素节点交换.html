@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 25px;
+        }
+
+        .up {
+            color: aqua;
+            cursor: pointer;
+        }
+
+        .down {
+            color: pink;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>111 <span class="up">上</span> <span class="down">下</span></li>
+        <li>222 <span class="up">上</span> <span class="down">下</span></li>
+        <li>333 <span class="up">上</span> <span class="down">下</span></li>
+        <li>444 <span class="up">上</span> <span class="down">下</span></li>
+    </ul>
+    <script>
+        const ul = document.querySelector('ul')
+        // const li2 = ul.children[1]
+
+        // 追加节点 
+        // const li_new = document.createElement('li')
+        // li_new.innerHTML = 'new创建'
+        // // node.insertBefore(要插入的元素，放到哪个元素之前)
+        // ul.insertBefore(li_new, ul.children[ul.children.length - 1])
+
+        // inserBefore还可以交换元素的位置， 如果第一个参数是本身存在的
+        // ul.insertBefore(li2, ul.children[3])
+
+        // const ups = document.querySelectorAll('.up');
+
+
+        ul.addEventListener('click', function (e) {
+            let i;
+            const ups = document.querySelectorAll('.up');
+            const downs = document.querySelectorAll('.down');
+            ups.forEach((el, i) => el.setAttribute('data-id', i));
+            downs.forEach((el, i) => el.setAttribute('data-id', i));
+            if (e.target.className === 'up') {
+                i = Number(e.target.dataset.id);
+                if (i === 0) return;
+                // ul.insertBefore(ul.children[i], ul.children[i - 1]);
+                ul.insertBefore(e.target.parentNode,e.target.parentNode.previousElementSibling)
+            }
+            if (e.target.className === 'down') {
+                i = Number(e.target.dataset.id);
+                if (i === ul.children.length - 1) return;
+                // ul.insertBefore(ul.children[i], ul.children[i + 2]);
+                ul.insertBefore(e.target.parentNode.nextElementSibling,e.target.parentNode)
+            }
+        });
+    </script>
+</body>
+
+</html>
